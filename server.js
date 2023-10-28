@@ -3,18 +3,19 @@ import mysql from "mysql2/promise";
 import mongoose from "mongoose";
 
 const app = express();
+
 const client = mysql.createPool({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "anibal",
+  password: "pass",
 });
 
 const response = await client.query("SELECT 1 + 1");
-console.log(response)
+console.log(response);
 
 const mongoConnection = await mongoose.connect("mongodb://localhost:27017/db");
-console.log(mongoConnection);
+console.log(mongoConnection.connection.db.databaseName);
 
 app.listen(3000);
 
