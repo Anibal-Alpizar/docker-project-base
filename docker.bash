@@ -23,3 +23,11 @@ mongo:
 
 mysql:
 ╰─ dokcer run --name projectmysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=pass  mysql                                                                                
+
+
+Dockerfile -> Create image from Dockerfile
+> docker build -t myimage . = create image from Dockerfile
+
+
+> docker images 
+> docker run --name server1 -p 5000:3000 myimage
